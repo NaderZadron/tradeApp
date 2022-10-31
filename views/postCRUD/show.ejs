@@ -1,0 +1,70 @@
+<% layout('layout/boilerplate')%>
+<div class="container1">
+    <div id="child1">
+        <div class="card">
+            <img class="card-img-top img-thumbnail" src="<%= post.image %>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.description %></p>
+            </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted"><%= post.city %>, <%= post.state %> </li>
+                    <li class="list-group-item">Type: <%= post.type %> </li>
+                    <li class="list-group-item ">Trade For: <%= post.tradeFor %> </li>
+                    <li class="list-group-item ">Posted By: <%= post.author.username %> </li>
+
+                </ul>
+            <div class="card-body">
+                <% if (currentUserId && post.author._id.equals(currentUserId)) {%> 
+                <div class="form-group">
+                    <form action="/posts/<%= post._id %>/?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                        <a href="/posts/<%= post._id %>/edit" class="card-link btn btn-primary">Edit</a>
+                    </form>
+                </div>
+                <% } %> 
+            </div>
+            <% if (!post.author._id.equals(currentUserId)) {%> 
+                <a href="/posts/offer/<%= post._id %>", class="btn btn-success" style="float: right;">Make Offer</a>
+                <% } %> 
+        </div>
+    </div>
+</div>
+
+<div id="child2">
+    <h3 class="offerCategoryPhrase">Pending Offers</h3>
+    <hr>
+    <% if (offers.length === 0) {%> 
+        <h3 class="offerCategoryPhrase">No Offers Yet</h3>
+    <% }else{ %> 
+    <% for(let i = 0; i < offers.length; i++) {%> 
+      <div class="offerContainer">
+      <a class="offerPost" href="/posts/<%= offers[i]._id %>">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="<%= offers[i].image %>" class="card-img-top img-thumbnail" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= offers[i].title %></h5>
+              <p class="card-text"><%= offers[i].description %></p>
+              <p class="card-text"><small class="text-muted"><%= offers[i].city %>, <%= offers[i].state %></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <% if (currentUserId && post.author._id.equals(currentUserId)) {%> 
+      <form action="/posts/<%= post._id %>/accept/<%= offers[i]._id %>" method="POST">
+        <button class="log" style="width: 100%">Accept Offer</button>
+      </form>
+    <% } %> 
+
+  </div>
+  <% } %> 
+
+      <% } %> 
+      </div>
+    </div>
+

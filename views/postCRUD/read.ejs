@@ -1,0 +1,26 @@
+<% if(!isLoggedIn) {%> 
+  <% layout('layout/boilerplateJumboNotLoggedIn')%>
+<% } %> 
+<% if(isLoggedIn) { %> 
+    <% layout('layout/boilerplateJumboIsLoggedIn')%>
+<% } %> 
+
+<% for(let i = 0; i < data.length; i++) {%> 
+<div id="card" class="card">
+  <img src="<%= data[i].image %>" class="card-img-top img-thumbnail" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= data[i].title %> </h5>
+    <p class="card-text"><%= data[i].description %> </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Type: <%= data[i].type %> </li>
+    <li class="list-group-item">Trade for: <%= data[i].tradeFor %> </li>
+    <li class="list-group-item"><%= data[i].city %>, <%= data[i].state %>  </li>
+  </ul>
+  <div class="card-body float-end">
+    <a href="/posts/<%= data[i]._id %> " class="btn btn-primary">View Details</a>
+  </div>
+</div>
+<% } %> 
+
+

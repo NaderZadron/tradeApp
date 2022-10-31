@@ -1,0 +1,51 @@
+<% layout('layout/authplate')%>
+
+<h1 class="offerCategoryPhrase">Confirm Trade Offer</h1>
+
+<form action="/posts/offer/<%= currUserPost._id %>/confirm/<%= postBeingViewed._id %> " method="POST">
+
+<div class="container1">
+
+    <div id="child1">
+
+<div class="card" style="width: 33rem; padding: 10px;">
+    <img class="card-img-top img-thumbnail" src="<%= postBeingViewed.image %>" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"><%= postBeingViewed.title %></h5>
+        <p class="card-text"><%= postBeingViewed.description %></p>
+    </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item text-muted"><%= postBeingViewed.city %>, <%= postBeingViewed.state %> </li>
+            <li class="list-group-item">Type: <%= postBeingViewed.type %> </li>
+            <li class="list-group-item ">Trade For: <%= postBeingViewed.tradeFor %> </li>
+            <li class="list-group-item ">Posted By: <%= postBeingViewed.author.username %> </li>
+
+        </ul>
+</div>
+    </div>
+
+
+  <div id="child1">
+
+<div class="card" style="width: 33rem; padding: 10px;">
+    <img class="card-img-top img-thumbnail" src="<%= currUserPost.image %>" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"><%= currUserPost.title %></h5>
+        <p class="card-text"><%= currUserPost.description %></p>
+    </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item text-muted"><%= currUserPost.city %>, <%= currUserPost.state %> </li>
+            <li class="list-group-item">Type: <%= currUserPost.type %> </li>
+            <li class="list-group-item ">Trade For: <%= currUserPost.tradeFor %> </li>
+
+        </ul>
+</div>
+</div>
+</div>
+
+
+<div class="confirmButtonContainer">
+        <button href="/login" class="log">Confirm</button>
+</div>
+</form>
+

@@ -1,0 +1,45 @@
+<% layout('layout/authplate')%>
+
+<% if(passedVariable) {%> 
+    <div class="alert alert-danger" role="alert">
+        <%= passedVariable %> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<% } %> 
+
+<form class="total" action="/register" method="POST">
+    <div class="main">
+        <h1 class="register">Register</h1>
+        <p class="description">Create your account. Its free and only takes a minute.</p>
+        <div class="name">
+            <input type="text" class="fname"name="firstname" id="firstname" placeholder="First Name" required>
+        </div>
+        <div class="name">
+            <input type="text" class="lname" name="lastname" id="lastname" placeholder="Last Name" required>
+        </div>
+        <div class="email">
+            <input type="text" class="email1"name="username" id="username" placeholder="Username" required minlength="5">
+        </div>
+        <div class="email">
+            <input class="email1" type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="pass">
+            <input class="password" type="password" name="password" id="password" placeholder="Password" required minlength="8">
+        </div>
+        <div class="rbutton">
+            <input type="checkbox" name="tos" id="tos">
+            <label class="tosLabel" for="tos">I accept the <a target="_blank" rel="noopener noreferrer" class="TOS" href="#">Terms of Use </a> & <a target="_blank" rel="noopener noreferrer" class="TOS" href="#">Privacy Policy</a></label>
+        </div>
+        <!-- <div>
+            <button type="button" class="registerButton">Register Now</button>
+        </div> -->
+        <div>
+            <input class="registerButton" type="submit" value="Register">
+        </div>
+    </div>
+    <div class="signIn">
+        <p>Already have an accout? <a class="signIna"href="/login">Log in</a></p>
+    </div>
+</form>

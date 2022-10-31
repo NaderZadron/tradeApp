@@ -1,0 +1,27 @@
+<% layout('layout/authplate')%>
+
+<form class="" action="/login" method="POST">
+  <div class="main">
+    <% if(errors.length) {%> 
+        <div class="alert alert-danger" role="alert">
+            <%= errors %> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <% } %> 
+    <h1 class="signin">Sign In</h1>
+    <p class="welcome">Welcome Back!</p>
+    <div class="epd">
+        <input class="ep" type="text" placeholder="Username" required name="username">
+    </div>
+    <div class="epd">
+        <input class="ep" type="password" id="pass" placeholder="Password" required name="password">
+    </div>
+    <div>
+        <input class="sibutton" type="submit" value="Login">
+    </div>
+    <!-- <button class="sibutton">Sign In</button> -->
+</div>
+<p class="noaccount">Don't have an account? <a class="signupa"href="/register">   Sign up</a></p>
+</form>

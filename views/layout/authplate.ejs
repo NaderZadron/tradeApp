@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/landing/landing.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="/stylesheets/stlye.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <title>TradeIt</title>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid navbar-custom">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " style="color: aliceblue" href="/">TradeIt</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/posts" style="color: aliceblue">Posts</a></li>
+              <li><a href="#about" style="color: aliceblue">About</a></li>
+              <li><a href="#contact" style="color: aliceblue">Contact</a></li>
+            </ul>
+          </div>
+          <!-- /.nav-collapse -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.navbar -->
+      
+      <main>
+        <%- include('../partials/flash')%> 
+
+        <div class="cardscontainer">
+
+          <%- body %>
+
+            <!-- </div> -->
+        </div>
+      </main>
+      <!-- <footer class="footer fixed-bottom">
+        <div class="container-fluid fixed-bottom">
+          <span class="text-muted">&copy; TradeIt</span>
+          </div>
+        </footer> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

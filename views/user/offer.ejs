@@ -1,0 +1,53 @@
+<% layout('layout/authplate')%>
+
+<div class="container1">
+  <div id="child1">
+    <div class="card">
+        <img class="card-img-top img-thumbnail" src="<%= postBeingViewed.image %>" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><%= postBeingViewed.title %></h5>
+            <p class="card-text"><%= postBeingViewed.description %></p>
+        </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted"><%= postBeingViewed.city %>, <%= postBeingViewed.state %> </li>
+                <li class="list-group-item">Type: <%= postBeingViewed.type %> </li>
+                <li class="list-group-item ">Trade For: <%= postBeingViewed.tradeFor %> </li>
+                <li class="list-group-item ">Posted By: <%= postBeingViewed.author.username %> </li>
+    
+            </ul>
+    </div>
+  </div>
+  <div id="child2">
+    <h3 class="offerCategoryPhrase">Select My Post to Offer for Trade</h3>
+    <% if (allOfCurrUserPosts.length === 0) {%> 
+      <a href="/posts/new" type="button" class="btn btn-primary btn-lg btn-block">Add Post</a>
+    <% }else{ %> 
+    <% for(let i = 0; i < allOfCurrUserPosts.length; i++) {%> 
+      <div class="offerContainer">
+      <a class="offerPost" href="/posts/offer/<%= allOfCurrUserPosts[i]._id %>/confirm/<%= postBeingViewed._id %>">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="<%= allOfCurrUserPosts[i].image %>" class="card-img-top img-thumbnail" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= allOfCurrUserPosts[i].title %></h5>
+              <p class="card-text"><%= allOfCurrUserPosts[i].description %></p>
+              <p class="card-text"><small class="text-muted"><%= allOfCurrUserPosts[i].city %>, <%= allOfCurrUserPosts[i].state %></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <% } %> 
+
+      <% } %> 
+      </div>
+    </div>
+
+
+
+
+

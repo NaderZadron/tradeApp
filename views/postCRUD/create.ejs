@@ -1,0 +1,54 @@
+<% layout('layout/boilerplate')%>
+
+<form class="col-md-6" action="/posts" method="POST" style="text-align: center;">
+  <h1 style="width: 100%; margin-left : 50%;">Add A New Post</h1>
+    <div class="row" style="width: 100%; margin-left : 50%;">
+    <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Post Title" name="post[title]" required>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Image Url</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Link" name="post[image]" required>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">City</label>
+        <input type="city" class="form-control" id="inputCity" placeholder="City" name="post[city]" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">State</label>
+        <input type="state" class="form-control" id="inputState" placeholder="State" name="post[state]" required>
+      </div>
+    </div>
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="post[description]" required></textarea>
+        </div>
+      <div class="form-group col-md-3">
+        <label for="inputState">Type</label>
+        <select id="inputState" class="form-control" name="post[type]" required>
+          <option selected></option>
+          <option value="Electronics">Electronics</option>
+          <option value="Books"> Books</option>
+          <option value="Apperal">Apperal</option>
+          <option value="Supplies">Supplies</option>
+          <option value="Health">Health</option>
+          <option value="Tutor">Tutor</option>        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputState">Trade For</label>
+        <select id="inputState" class="form-control" name="post[tradeFor]" required>
+          <option selected></option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books"> Books</option>
+            <option value="Apperal">Apperal</option>
+            <option value="Supplies">Supplies</option>
+            <option value="Health">Health</option>
+            <option value="Tutor">Tutor</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </div>
+</form>

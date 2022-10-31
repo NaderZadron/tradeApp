@@ -1,0 +1,54 @@
+<% layout('layout/boilerplate')%>
+<h1 class="text-center">Edit Post</h1>
+
+<form class="col-lg-6 offset-lg-3" action="/posts/<%=post._id%>?_method=PUT" method="POST">
+    <div class="row justify-content-center">
+    <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input value="<%= post.title %>" type="text" class="form-control" id="inputAddress" placeholder="Post Title" name="post[title]">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Image Url</label>
+        <input value="<%= post.image %>" type="text" class="form-control" id="inputAddress2" placeholder="Link" name="post[image]">
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">City</label>
+        <input value="<%= post.city %>" type="city" class="form-control" id="inputCity" placeholder="City" name="post[city]">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">State</label>
+        <input value="<%= post.state %>" type="state" class="form-control" id="inputState" placeholder="State" name="post[state]">
+      </div>
+    </div>
+        <div class="form-group col-md-6">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea value="<%= post.description %>" class="form-control" id="exampleFormControlTextarea1" rows="3" name="post[description]" required></textarea>
+        </div>
+      <div class="form-group col-md-3">
+        <label for="inputState">Type</label>
+        <select id="inputState" class="form-control" name="post[type]" required>
+          <option selected></option>
+          <option value="Electronics">Electronics</option>
+          <option value="Books"> Books</option>
+          <option value="Apperal">Apperal</option>
+          <option value="Supplies">Supplies</option>
+          <option value="Health">Health</option>
+          <option value="Tutor">Tutor</option>        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputState">Trade For</label>
+        <select id="inputState" class="form-control" name="post[tradeFor]" required>
+          <option selected></option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books"> Books</option>
+            <option value="Apperal">Apperal</option>
+            <option value="Supplies">Supplies</option>
+            <option value="Health">Health</option>
+            <option value="Tutor">Tutor</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </div>
+</form>

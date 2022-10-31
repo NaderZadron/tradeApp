@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/landing/landing.css">
+    <link rel="stylesheet" href="/stylesheets/stlye.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <title>TradeIt</title>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid navbar-custom">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " style="color: aliceblue" href="/">TradeIt</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/posts" style="color: aliceblue">Posts</a></li>
+              <li><a href="" style="color: aliceblue">About</a></li>
+              <li><a href="" style="color: aliceblue">Contact</a></li>
+            </ul>
+          </div>
+          <!-- /.nav-collapse -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.navbar -->
+
+      <div class="login">
+        <form action="/login" method="get">
+          <h1 class="title">TradeIt</h1>
+          <p class="desc">Website to trade goods</p>
+          <button href="/login" class="log">Login</button>
+          <p class="desc">Don't Have acount? <a href="/register" style="color: white;">Register Here</a></p>
+        </form>
+      </div>
+      <div class="row">
+        <figure class="column">
+          <a href="/posts?query=Electronics" class="a">
+            <img src = "stylesheets/electronics1.jpg" alt="Snow" style="width:100%">
+            <figcaption class="centered">Electronics</figcaption>
+          </a>
+        </figure>
+        <figure class="column">
+         <a href="/posts?query=Books" class="a">
+          <img src="stylesheets/books.jpg" alt="Forest" style="width:100%">
+          <figcaption class="centered">Books</figcaption>
+        </a> 
+        </figure>
+        <figure class="column">
+         <a href="/posts?query=Apperal" class="a">
+          <img src="stylesheets/apparel1.jpg" alt="Mountains" style="width:100%">
+          <figcaption class="centered">Apparel</figcaption>
+        </a> 
+        </figure>        
+        <figure class="column">
+         <a href="/posts?query=Supplies" class="a">
+          <img src="stylesheets/supplies.jpg" alt="Mountains" style="width:100%">
+          <figcaption class="centered">Supplies</figcaption>
+        </a> 
+        </figure>
+        <figure class="column">
+         <a href="/posts?query=Health" class="a">
+          <img src="stylesheets/health.jpg" alt="Mountains" style="width:100%">
+          <figcaption class="centered">Health</figcaption>
+
+        </a> 
+        </figure>
+        <figure class="column">
+          <a href="/posts?query=Tutor" class="a">
+            <img src="stylesheets/tutor.jpg" alt="Mountains" style="width:100%">
+            <figcaption class="centered">Tutor</figcaption>
+
+          </a>
+        </figure>
+
+
+      </div>
+
+    <footer class="mt-auto text-white-50">
+        <p>&copy; 2020 </p>
+    </footer>
+
+
+</div>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  </body>
+  </html>

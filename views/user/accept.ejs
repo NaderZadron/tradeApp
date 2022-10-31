@@ -1,0 +1,47 @@
+<% layout('layout/authplate')%>
+
+<h1 style="text-align: center;">Offer Accepted</h1>
+<hr>
+
+<div class="container1">
+    <div id="child1">
+        <h4 style="text-align: center;">You Have Accepted the Following Offer</h4>
+        <hr>
+        <div class="card">
+            <img class="card-img-top img-thumbnail" src="<%= offerPost.image %>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%= offerPost.title %></h5>
+                <p class="card-text"><%= offerPost.description %></p>
+            </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted"><%= offerPost.city %>, <%= offerPost.state %> </li>
+                    <li class="list-group-item">Type: <%= offerPost.type %> </li>
+                    <li class="list-group-item ">Trade For: <%= offerPost.tradeFor %> </li>
+                    <li class="list-group-item ">Posted By: <%= offerPost.author.username %> </li>
+
+                </ul>
+        </div>
+    </div>
+    <div id="child2">
+        <h4 style="text-align: center;">Processing the Trade</h4>
+        <hr>
+        <h5 class="offerCategoryPhrase" style="text-align: left;">Step 1: Connect with <%= offerPost.author.username %> </h5>
+        <br>
+        <h6 class="offerCategoryPhrase">
+            Use our Trusted Chat App <a href="#">chatApp</a>
+        </h6>
+        <h6 class="offerCategoryPhrase">OR</h6>
+        <h6 class="offerCategoryPhrase">Email Address: <%= offerPost.author.emailAddr %> </h6>
+        <br>
+        <h5 class="offerCategoryPhrase" style="text-align: left;">Step 2: Arrange the Exchange of products</h5>
+        <br>
+        <h6 class="offerCategoryPhrase">Use FedEx or UPS for the shipping of products</h6>
+        <br>
+        <h5 class="offerCategoryPhrase" style="text-align: left;">Step 3: Confirm the Exchange</h5>
+        <br>
+        <h6 class="offerCategoryPhrase">Press the button below once instructions understand</h6>
+        <form action="/posts/<%= currUserPost._id %>/accept/<%= offerPost._id %>/?_method=DELETE" method="POST">
+            <button class="btn btn-danger" style="float: right;">Exchange</button>
+        </form>
+    </div>
+</div>
